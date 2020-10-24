@@ -1,0 +1,27 @@
+value_A = 1, 11
+value_J = 10
+value_K = 10
+value_Q = 10
+amount_pocket = 500
+
+# maybe the color doesn't need to be defined fundamentaly
+deck = {'heart': [value_a,2,3,4,5,6,7,8,9,10,value_j,value_q, value_k],
+'spade': [value_a,2,3,4,5,6,7,8,9,10,value_j,value_q, value_k]
+'diamond': [value_a,2,3,4,5,6,7,8,9,10,value_j,value_q, value_k]
+'clover':[value_a,2,3,4,5,6,7,8,9,10,value_j,value_q, value_k]}
+
+#First Step : User makes a bet
+def make_bet(bet):
+    print("You have {} remaining in your pocket".format(amount_pocket))
+    try:
+        bet = input("How much would you like to bet?")
+    except:
+        raise ValueError("An error has occured. Make sure to input a number.")
+        
+    amount_pocket = amount_pocket - bet
+    print("You have bet: {} $".format(bet))
+    print("You have now {} remaining in your pocket".format(amount_pocket))
+    return amount_pocket
+
+#2nd Step: Reveal the cards
+
